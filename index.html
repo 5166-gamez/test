@@ -44,6 +44,27 @@
     </div>
   </div>
 
+    <div class="settings-container">
+  <button id="settings-button" onclick="toggleSettingsMenu()">
+    <img src="icons/settingswhite.png" alt="Settings">
+  </button>
+
+  <div id="settings-menu">
+    <button onclick="toggleGamesSubMenu()">Games ▸</button>
+    <div id="games-submenu">
+      <button onclick="toggleAspectSubMenu()">Aspect Ratio ▸</button>
+      <div id="aspect-submenu">
+        <button onclick="setAspectRatio('16:9')">16:9</button>
+        <button onclick="setAspectRatio('4:3')">4:3</button>
+        <button onclick="setAspectRatio('21:9')">21:9</button>
+        <button onclick="setAspectRatio('1:1')">1:1</button>
+        <button onclick="setAspectRatio('3:2')">3:2</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <button id="github-button" alt="View on GitHub">
     <img src="icons/githubwhite.png" alt="GitHub">
   </button>
