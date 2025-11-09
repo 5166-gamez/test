@@ -1,19 +1,18 @@
 {
-  "name": "Test Log",
-  "version": "v0.0.0",
-  "date": "10/11/25",
+  "name": "First Update",
+  "version": "v0.1.0",
+  "date": "11/x/25",
   "changes": [
     {
-      "title": "games",
+      "title": "Games",
       "items": [
-        "poop simulator",
-        "new game idk"
+        "poop simulator"
       ]
     },
     {
-      "title": "fixes",
+      "title": "Additions",
       "items": [
-        "fixed something"
+        "nothing"
       ]
     }
   ]
