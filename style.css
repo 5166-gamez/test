@@ -292,3 +292,69 @@ body.header-hidden {
 .changelog-block ul ul {
   list-style-type: circle;
 }
+
+/* Settings dropdown container */
+.settings-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Settings button */
+#settings-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+#settings-button img {
+  width: 28px;
+  height: 28px;
+}
+
+#settings-menu,
+#games-submenu,
+#aspect-submenu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 6px;
+  background: var(--bg, #222);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  padding: 5px;
+  z-index: 100;
+}
+
+#games-submenu {
+  top: 0;
+  right: 100%;
+  margin-right: 6px;
+}
+
+#aspect-submenu {
+  top: 0;
+  right: 100%;
+  margin-right: 6px;
+}
+
+#settings-menu button,
+#games-submenu button,
+#aspect-submenu button {
+  display: block;
+  background: none;
+  border: none;
+  padding: 8px 14px;
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+  color: var(--text, #fff);
+  font-size: 14px;
+}
+
+#settings-menu button:hover,
+#games-submenu button:hover,
+#aspect-submenu button:hover {
+  background: rgba(255,255,255,0.1);
+}
