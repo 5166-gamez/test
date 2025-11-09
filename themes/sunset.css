@@ -1,0 +1,43 @@
+:root {
+  --bg-color: #2b0a0a;
+  --text-color: #fff2e9;
+  --header-bg: #471a0c;
+  --button-bg: #752f17;
+  --button-hover: #a83e1a;
+  --panel-bg: #33130b;
+  --accent: #ff884a;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  text-align: center;
+}
+header {
+  background: var(--header-bg);
+  padding: 1em;
+  position: sticky;
+  top: 0;
+}
+nav button, #theme-selector, #back-button {
+  background: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background 0.2s;
+}
+nav button:hover, #theme-selector:hover, #back-button:hover {
+  background: var(--button-hover);
+}
+iframe {
+  border: none;
+  max-width: 90vw;
+  height: 600px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
