@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+  <link rel="shortcut icon" type="image/x-icon" href="icons/classroomicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <link id="theme-link" rel="stylesheet" href="themes/dark.css">
+</head>
+<body>
+  <header id="main-header">
+  <nav>
+
+  <div class="nav-left">
+    <div id="page-indicator">
+      <img id="page-icon" src="icons/pageicons/home.png" alt="Page Icon">
+      <span id="page-name">Home</span>
+    </div>
+  </div>
+
+  <div class="nav-center">
+    <button onclick="loadSection('home')">Home</button>
+    <button onclick="loadSection('games')">Games</button>
+    <button onclick="loadSection('changelogs')">Changelogs</button>
+    <button onclick="loadSection('contact')">Contact</button>
+  </div>
+
+  <div class="nav-right">
+  <div class="theme-container">
+    <button id="theme-button" onclick="toggleThemeMenu()">
+      <img src="icons/themeswhite.png" alt="Themes">
+    </button>
+    <div id="theme-menu">
+      <button onclick="changeTheme('dark')">Dark</button>
+      <button onclick="changeTheme('light')">Light</button>
+      <button onclick="changeTheme('crimson')">Crimson</button>
+      <button onclick="changeTheme('midnight')">Midnight</button>
+      <button onclick="changeTheme('solar')">Solar</button>
+      <button onclick="changeTheme('ember')">Ember</button>
+      <button onclick="changeTheme('blossom')">Blossom</button>
+      <button onclick="changeTheme('sunset')">Sunset</button>
+      <button onclick="changeTheme('shadow')">Shadow</button>
+    </div>
+  </div>
+
+  <button id="github-button" alt="View on GitHub">
+    <img src="icons/githubwhite.png" alt="GitHub">
+  </button>
+</div>
+</nav>
+</header>
+  <button id="toggle-header-btn" onclick="toggleHeader()">
+    <img id="arrow-icon" src="icons/collapsewhite.png" alt="Collapse">
+  </button>
+
+  <main id="content"></main>
+  <script src="script.js"></script>
+</body>
+</html>
