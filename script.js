@@ -31,7 +31,7 @@ function loadSection(section) {
 
     case "contact":
       content.innerHTML = `
-        <h2>Contact Us</h2>
+        <h2>Contact</h2>
         <p>Fill out the form below to suggest a game:</p>
         <iframe 
           src="https://docs.google.com/forms/d/e/1FAIpQLSfTl_4-B2gHmKEfpPzcFmRuFvSs_BfqOgZidXwgy8iGI4q8Iw/viewform?embedded=true" 
@@ -188,6 +188,57 @@ function toggleThemeMenu() {
   const menu = document.getElementById("theme-menu");
   menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
+
+// SETTINGS MENU SYSTEM
+function toggleSettingsMenu() {
+  const menu = document.getElementById("settings-menu");
+  const otherMenus = [document.getElementById("theme-menu"), document.getElementById("games-submenu"), document.getElementById("aspect-submenu")];
+  
+  // Close all other menus
+  otherMenus.forEach(m => m && (m.style.display = "none"));
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+function toggleGamesSubMenu() {
+  const submenu = document.getElementById("games-submenu");
+  const aspect = document.getElementById("aspect-submenu");
+  aspect.style.display = "none"; // close inner submenu if open
+  submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+}
+
+function toggleAspectSubMenu() {
+  const submenu = document.getElementById("aspect-submenu");
+  submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+}
+
+function setAspectRatio(ratio) {
+  localStorage.setItem("aspectRatio", ratio);
+  applyAspectRatio(ratio);
+  
+  // Close all dropdowns
+  ["aspect-submenu", "games-submenu", "settings-menu"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = "none";
+  });
+}
+
+function applyAspectRatio(ratio) {
+  const iframe = document.querySelector(".game-container iframe");
+  if (!iframe) return;
+
+  const [w, h] = ratio.split(":").map(Number);
+  const height = 720; // baseline height
+  const width = (height * w) / h;
+
+  iframe.width = width;
+  iframe.height = height;
+}
+
+// Apply saved aspect ratio on load
+document.addEventListener("DOMContentLoaded", () => {
+  const savedRatio = localStorage.getItem("aspectRatio");
+  if (savedRatio) applyAspectRatio(savedRatio);
+});
 
 // Collapse/Expand header
 function toggleHeader() {
