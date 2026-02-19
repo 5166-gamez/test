@@ -178,9 +178,17 @@ function changeTheme(theme) {
   localStorage.setItem("theme", theme);
 }
 
+//cute fallback for nonexisting themes
 document.addEventListener("DOMContentLoaded", () => {
-  const saved = localStorage.getItem("theme") || "dark";
-  document.documentElement.setAttribute("data-theme", saved);
+  const saved = localStorage.getItem("theme");
+
+  const allowedThemes = ["dark", "light", "crimson", "blossom", "midnight"];
+
+  if (allowedThemes.includes(saved)) {
+    document.documentElement.setAttribute("data-theme", saved);
+  } else {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
 });
 
 function toggleThemeMenu() {
