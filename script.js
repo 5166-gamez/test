@@ -174,14 +174,13 @@ function showGame(embedHTML) {
 }
 
 function changeTheme(theme) {
-  const link = document.getElementById('theme-link');
-  link.href = `themes/${theme}.css`;
-  localStorage.setItem('theme', theme); // save preference
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('theme') || 'dark';
-  changeTheme(saved);
+document.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("theme") || "dark";
+  document.documentElement.setAttribute("data-theme", saved);
 });
 
 function toggleThemeMenu() {
