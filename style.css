@@ -1,3 +1,52 @@
+:root {
+  --bg-gradient: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #111);
+  --text: #ffffff;
+  --accent: #00c6ff;
+  --header-bg: rgba(20,20,20,0.6);
+  --panel-bg: rgba(255,255,255,0.05);
+  --dropdown-bg: rgba(30,30,30,0.95);
+}
+
+/* LIGHT */
+[data-theme="light"] {
+  --bg-gradient: linear-gradient(-45deg, #f5f7fa, #e4ecf5, #dde7f0, #ffffff);
+  --text: #222;
+  --accent: #007bff;
+  --header-bg: rgba(255,255,255,0.7);
+  --panel-bg: rgba(0,0,0,0.05);
+  --dropdown-bg: rgba(255,255,255,0.95);
+}
+
+/* CRIMSON */
+[data-theme="crimson"] {
+  --bg-gradient: linear-gradient(-45deg, #1a0005, #3a000f, #5e0019, #2b000a);
+  --text: #ffffff;
+  --accent: #ff1744;
+  --header-bg: rgba(40,0,10,0.7);
+  --panel-bg: rgba(255,255,255,0.05);
+  --dropdown-bg: rgba(30,0,10,0.95);
+}
+
+/* BLOSSOM */
+[data-theme="blossom"] {
+  --bg-gradient: linear-gradient(-45deg, #fff7f9, #ffd6e0, #ffc2cf, #ffe6eb);
+  --text: #3b2a2f;
+  --accent: #ff6396;
+  --header-bg: rgba(255,214,224,0.7);
+  --panel-bg: rgba(255,255,255,0.6);
+  --dropdown-bg: rgba(255,255,255,0.95);
+}
+
+/* MIDNIGHT */
+[data-theme="midnight"] {
+  --bg-gradient: linear-gradient(-45deg, #0a0f1f, #111a33, #1a2747, #000814);
+  --text: #e0e6ff;
+  --accent: #4dabff;
+  --header-bg: rgba(10,15,30,0.7);
+  --panel-bg: rgba(255,255,255,0.05);
+  --dropdown-bg: rgba(10,15,30,0.95);
+
+
 /* =========================
    GLOBAL + ANIMATED BACKGROUND
 ========================= */
@@ -5,11 +54,12 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  color: var(--text, #fff);
-  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #111);
+  color: var(--text);
+  background: var(--bg-gradient);
   background-size: 400% 400%;
   animation: gradientBG 18s ease infinite;
   padding-top: 70px;
+  transition: background 0.4s ease, color 0.3s ease;
 }
 
 @keyframes gradientBG {
@@ -27,7 +77,7 @@ header {
   top: 0;
   width: 100%;
   backdrop-filter: blur(12px);
-  background: rgba(20, 20, 20, 0.6);
+  background: var(--header-bg);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   z-index: 1000;
   transition: transform 0.4s ease;
