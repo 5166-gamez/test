@@ -1,7 +1,7 @@
 {
   "name": "First Update",
-  "version": "v0.1.0",
-  "date": "11/x/25",
+  "version": "v1.0.0",
+  "date": "3/x/26",
   "changes": [
     {
       "title": "Games",
@@ -12,7 +12,7 @@
     {
       "title": "Additions",
       "items": [
-        "nothing"
+        "Settings panel"
       ]
     }
   ]
