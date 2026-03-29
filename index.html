@@ -47,24 +47,6 @@
   <button id="settings-button" onclick="toggleSettingsMenu()">
     <img src="icons/settingswhite.png" alt="Settings">
   </button>
-
-   <!-- SETTINGS PANEL -->
-  <div id="settings-overlay">
-    <div id="settings-panel">
-      <div id="settings-header">
-        <h2 id="settings-title">Settings</h2>
-        <button id="settings-close">X</button>
-      </div>
-      <div id="settings-body">
-        <div id="settings-categories">
-          <!-- Buttons for each category go here -->
-        </div>
-        <div id="settings-options">
-          <!-- Selected category's settings go here -->
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 
@@ -78,6 +60,29 @@
     <img id="arrow-icon" src="icons/collapsewhite.png" alt="Collapse">
   </button>
 
+<main id="content"></main>
+
+<!-- SETTINGS PANEL OUTSIDE HEADER -->
+<div id="settings-overlay">
+  <div id="settings-panel">
+    <div id="settings-header">
+      <h2 id="settings-title">Settings</h2>
+      <button id="settings-close">X</button>
+    </div>
+    <div id="settings-body">
+      <div id="settings-categories">
+        <!-- Buttons for each category go here -->
+      </div>
+      <div id="settings-options">
+        <!-- Selected category's settings go here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+  
   <main id="content"></main>
   <script src="script.js"></script>
 </body>
