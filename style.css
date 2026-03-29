@@ -48,22 +48,28 @@
 }
 
 /* =========================
-   GLOBAL + ANIMATED BACKGROUND
+   GLOBAL BACKGROUND FIX
 ========================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+
+  will-change: transform;
+}
 
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   color: var(--text);
-  background: var(--bg-gradient);
+  background: none; /* IMPORTANT */
   padding-top: 70px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  transition: color 0.3s ease;
 }
 
 /* =========================
