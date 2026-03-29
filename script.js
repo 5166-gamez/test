@@ -229,19 +229,115 @@ function setAspectRatio(ratio) {
   });
 }
 
+const settingsData = {
+  "Games": [
+    {
+      name: "Aspect Ratio",
+      type: "options",
+      options: ["16:9","4:3","21:9","1:1","3:2"],
+      storageKey: "aspectRatio",
+      onChange: applyAspectRatio
+    }
+  ]
+};
+
+const settingsOverlay = document.getElementById("settings-overlay");
+const settingsCategories = document.getElementById("settings-categories");
+const settingsOptions = document.getElementById("settings-options");
+const settingsTitle = document.getElementById("settings-title");
+
+document.getElementById("settings-button").addEventListener("click", () => {
+  settingsOverlay.style.display = "flex";
+  renderSettingsCategories();
+});
+
+document.getElementById("settings-close").addEventListener("click", () => {
+  settingsOverlay.style.display = "none";
+});
+
+function renderSettingsCategories() {
+  settingsCategories.innerHTML = "";
+  Object.keys(settingsData).forEach((category, idx) => {
+    const btn = document.createElement("button");
+    btn.textContent = category;
+    if (idx === 0) btn.classList.add("active");
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#settings-categories button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderSettingsOptions(category);
+    });
+    settingsCategories.appendChild(btn);
+  });
+
+  // Render first category by default
+  renderSettingsOptions(Object.keys(settingsData)[0]);
+}
+
+function renderSettingsOptions(category) {
+  settingsOptions.innerHTML = "";
+  settingsTitle.textContent = `Settings - ${category}`;
+  settingsData[category].forEach(setting => {
+    const div = document.createElement("div");
+    div.className = "setting-option";
+
+    const label = document.createElement("span");
+    label.textContent = setting.name;
+    div.appendChild(label);
+
+    // Options type
+    if (setting.type === "options") {
+      const optionContainer = document.createElement("div");
+      setting.options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.textContent = opt;
+
+        // Highlight selected
+        const saved = localStorage.getItem(setting.storageKey);
+        if (saved === opt) btn.classList.add("selected");
+
+        btn.addEventListener("click", () => {
+          localStorage.setItem(setting.storageKey, opt);
+          optionContainer.querySelectorAll("button").forEach(b => b.classList.remove("selected"));
+          btn.classList.add("selected");
+          setting.onChange(opt);
+        });
+
+        optionContainer.appendChild(btn);
+      });
+      div.appendChild(optionContainer);
+    }
+
+    // Range type
+    if (setting.type === "range") {
+      const input = document.createElement("input");
+      input.type = "range";
+      input.min = setting.min;
+      input.max = setting.max;
+      input.step = setting.step;
+      input.value = localStorage.getItem(setting.storageKey) || setting.min;
+
+      input.addEventListener("input", () => {
+        localStorage.setItem(setting.storageKey, input.value);
+        setting.onChange(input.value);
+      });
+
+      div.appendChild(input);
+    }
+
+    settingsOptions.appendChild(div);
+  });
+}
+
 function applyAspectRatio(ratio) {
   const iframe = document.querySelector(".game-container iframe");
   if (!iframe) return;
-
-  const [w, h] = ratio.split(":").map(Number);
-  const height = 720; // baseline height
+  const [w,h] = ratio.split(":").map(Number);
+  const height = 720;
   const width = (height * w) / h;
-
   iframe.width = width;
   iframe.height = height;
 }
 
-// Apply saved aspect ratio on load
 document.addEventListener("DOMContentLoaded", () => {
   const savedRatio = localStorage.getItem("aspectRatio");
   if (savedRatio) applyAspectRatio(savedRatio);
