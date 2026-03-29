@@ -1,48 +1,48 @@
 :root {
-  --bg-gradient: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #111);
-  --text: #ffffff;
-  --accent: #00c6ff;
-  --header-bg: rgba(20,20,20,0.6);
-  --panel-bg: rgba(255,255,255,0.05);
-  --dropdown-bg: rgba(30,30,30,0.95);
+  --bg-gradient: linear-gradient(180deg, #0a0a0a, #121212, #1a1a1a, #0f0f0f);
+  --text: #eaeaea;
+  --accent: #9aa0a6;
+  --header-bg: rgba(20,20,20,0.75);
+  --panel-bg: rgba(255,255,255,0.04);
+  --dropdown-bg: rgba(25,25,25,0.95);
 }
 
 /* LIGHT */
 [data-theme="light"] {
-  --bg-gradient: linear-gradient(-45deg, #f5f7fa, #e4ecf5, #dde7f0, #ffffff);
-  --text: #222;
-  --accent: #007bff;
-  --header-bg: rgba(255,255,255,0.7);
-  --panel-bg: rgba(0,0,0,0.05);
-  --dropdown-bg: rgba(255,255,255,0.95);
+  --bg-gradient: linear-gradient(180deg, #f8f9fb, #eef1f5, #e6ebf0, #ffffff);
+  --text: #1f1f1f;
+  --accent: #4a90e2;
+  --header-bg: rgba(255,255,255,0.8);
+  --panel-bg: rgba(0,0,0,0.04);
+  --dropdown-bg: rgba(255,255,255,0.97);
 }
 
 /* CRIMSON */
 [data-theme="crimson"] {
-  --bg-gradient: linear-gradient(-45deg, #1a0005, #3a000f, #5e0019, #2b000a);
+  --bg-gradient: linear-gradient(180deg, #1a0005, #3a000f, #5e0019, #2b000a);
   --text: #ffffff;
   --accent: #ff1744;
-  --header-bg: rgba(40,0,10,0.7);
+  --header-bg: rgba(40,0,10,0.75);
   --panel-bg: rgba(255,255,255,0.05);
   --dropdown-bg: rgba(30,0,10,0.95);
 }
 
 /* BLOSSOM */
 [data-theme="blossom"] {
-  --bg-gradient: linear-gradient(-45deg, #fff7f9, #ffd6e0, #ffc2cf, #ffe6eb);
-  --text: #3b2a2f;
-  --accent: #ff6396;
-  --header-bg: rgba(255,214,224,0.7);
-  --panel-bg: rgba(255,255,255,0.6);
-  --dropdown-bg: rgba(255,255,255,0.95);
+  --bg-gradient: linear-gradient(180deg, #fff5f8, #ffd6e0, #ffc2cf, #ffe3ea);
+  --text: #3a2a2f;
+  --accent: #ff5c8a;
+  --header-bg: rgba(255,214,224,0.8);
+  --panel-bg: rgba(255,255,255,0.65);
+  --dropdown-bg: rgba(255,255,255,0.97);
 }
 
 /* MIDNIGHT */
 [data-theme="midnight"] {
-  --bg-gradient: linear-gradient(-45deg, #0a0f1f, #111a33, #1a2747, #000814);
+  --bg-gradient: linear-gradient(180deg, #0a0f1f, #111a33, #1a2747, #000814);
   --text: #e0e6ff;
   --accent: #4dabff;
-  --header-bg: rgba(10,15,30,0.7);
+  --header-bg: rgba(10,15,30,0.75);
   --panel-bg: rgba(255,255,255,0.05);
   --dropdown-bg: rgba(10,15,30,0.95);
 }
@@ -56,10 +56,8 @@ body {
   font-family: 'Segoe UI', sans-serif;
   color: var(--text);
   background: var(--bg-gradient);
-  background-size: 400% 400%;
-  animation: gradientBG 18s ease infinite;
   padding-top: 70px;
-  transition: background 0.4s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 @keyframes gradientBG {
