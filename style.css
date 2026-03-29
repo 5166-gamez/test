@@ -402,3 +402,112 @@ header nav {
 .fade-out {
   opacity: 0;
 }
+
+/* SETTINGS OVERLAY */
+#settings-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* SETTINGS PANEL */
+#settings-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(12px);
+  width: 700px;
+  max-width: 95%;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* HEADER */
+#settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#settings-header h2 {
+  margin: 0;
+}
+
+#settings-header button {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* BODY LAYOUT */
+#settings-body {
+  display: flex;
+  min-height: 300px;
+}
+
+#settings-categories {
+  width: 150px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+#settings-categories button {
+  background: none;
+  border: none;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text);
+  transition: background 0.2s ease;
+}
+
+#settings-categories button.active,
+#settings-categories button:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+#settings-options {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* OPTION BUTTONS */
+.setting-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.setting-option button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.setting-option button.selected {
+  background: var(--accent);
+  color: #fff;
+}
