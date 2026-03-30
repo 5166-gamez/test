@@ -188,41 +188,111 @@ function renderFilteredLogs() {
   });
 }
 
+let ALL_GAMES = [];
+let ACTIVE_CATEGORY = "All";
+let SEARCH_QUERY = "";
+
 async function loadGames() {
   content.innerHTML = `
     <h2>Games</h2>
+
+    <div class="games-topbar">
+      <div id="category-filters" class="category-filters"></div>
+      <input id="game-search" type="text" placeholder="🔍 Search..." />
+    </div>
+
     <div id="game-grid" class="game-grid"></div>
   `;
 
   const grid = document.getElementById("game-grid");
+  const filterContainer = document.getElementById("category-filters");
+  const searchInput = document.getElementById("game-search");
 
   try {
     const res = await fetch("games/index.json");
     const files = await res.json();
 
+    ALL_GAMES = [];
+
     for (const file of files) {
       const gameData = await fetch(`games/${file}`).then(r => r.json());
-      renderGameCard(grid, gameData);
+      ALL_GAMES.push(gameData);
     }
+
+    renderCategories(filterContainer);
+    renderGames();
+
+    searchInput.addEventListener("input", () => {
+      SEARCH_QUERY = searchInput.value.toLowerCase();
+      ACTIVE_CATEGORY = "All"; // reset filter when searching
+      highlightActiveCategory();
+      renderGames();
+    });
+
   } catch (err) {
     console.error(err);
     grid.innerHTML = "<p>Failed to load games.</p>";
   }
 }
 
-function renderGameCard(container, game) {
-  const card = document.createElement("div");
-  card.className = "game-card";
+function renderCategories(container) {
+  container.innerHTML = "";
 
-  card.innerHTML = `
-    <img src="${game.icon}" alt="${game.name}" class="game-icon">
-    <h3 class="game-name">${game.name}</h3>
-    <p class="game-desc">${game.description || ""}</p>
-    <button class="play-btn">Play</button>
-  `;
+  const categories = new Set(["All"]);
 
-  card.querySelector(".play-btn").addEventListener("click", () => openGamePage(game));
-  container.appendChild(card);
+  ALL_GAMES.forEach(game => {
+    if (game.category) categories.add(game.category);
+  });
+
+  categories.forEach(cat => {
+    const btn = document.createElement("button");
+    btn.textContent = cat;
+
+    if (cat === ACTIVE_CATEGORY) btn.classList.add("active");
+
+    btn.addEventListener("click", () => {
+      ACTIVE_CATEGORY = cat;
+      SEARCH_QUERY = ""; // optional: clear search when filtering
+      document.getElementById("game-search").value = "";
+      highlightActiveCategory();
+      renderGames();
+    });
+
+    container.appendChild(btn);
+  });
+}
+
+function highlightActiveCategory() {
+  document.querySelectorAll(".category-filters button").forEach(btn => {
+    btn.classList.remove("active");
+    if (btn.textContent === ACTIVE_CATEGORY) {
+      btn.classList.add("active");
+    }
+  });
+}
+
+function renderGames() {
+  const grid = document.getElementById("game-grid");
+  grid.innerHTML = "";
+
+  const filtered = ALL_GAMES.filter(game => {
+    const matchesCategory =
+      ACTIVE_CATEGORY === "All" || game.category === ACTIVE_CATEGORY;
+
+    const matchesSearch =
+      game.name.toLowerCase().includes(SEARCH_QUERY);
+
+    return matchesCategory && matchesSearch;
+  });
+
+  if (filtered.length === 0) {
+    grid.innerHTML = "<p>No games found.</p>";
+    return;
+  }
+
+  filtered.forEach(game => {
+    renderGameCard(grid, game);
+  });
 }
 
 function openGamePage(game) {
