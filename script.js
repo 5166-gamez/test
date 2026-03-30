@@ -317,6 +317,16 @@ function setAspectRatio(ratio) {
 }
 
 const settingsData = {
+  "Site Preferences": [
+    {
+      name: "Theme",
+      type: "options",
+      options: ["dark","light","crimson","midnight","blossom"],
+      storageKey: "theme",
+      onChange: changeTheme
+    }
+  ],
+
   "Games": [
     {
       name: "Aspect Ratio",
