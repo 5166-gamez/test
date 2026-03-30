@@ -269,7 +269,7 @@ function changeTheme(theme) {
 document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("theme");
 
-  const allowedThemes = ["dark", "light", "crimson", "blossom", "midnight"];
+  const allowedThemes = ["dark", "light", "crimson", "midnight", "blossom", "shadow", "aurora", "solar", "forest", "neon"];
 
   if (allowedThemes.includes(saved)) {
     document.documentElement.setAttribute("data-theme", saved);
@@ -318,7 +318,7 @@ const settingsData = {
       name: "Theme",
       type: "options",
       display: "grid",
-      options: ["dark","light","crimson","midnight","blossom"],
+      options: ["dark","light","crimson","midnight","blossom","shadow","aurora","solar","forest","neon"],
       storageKey: "theme",
       onChange: changeTheme
     }
