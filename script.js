@@ -51,55 +51,127 @@ function loadSection(section) {
   }
 }
 
+let ALL_CHANGELOGS = [];
+let ACTIVE_LABEL = "All";
+
 async function loadChangelogs() {
-  content.innerHTML = `
-    <h2>Changelogs</h2>
-    <div id="changelog-list" style="display: flex; flex-direction: column; gap: 20px;"></div>
-  `;
+  content.innerHTML = `...`; // (layout from step 2)
 
   const list = document.getElementById("changelog-list");
+  const labelFilters = document.getElementById("label-filters");
+  const releaseList = document.getElementById("release-list");
 
   try {
-    // Fetch list of changelogs
     const response = await fetch("changelogs/index.json");
     const files = await response.json();
 
-    for (const file of files.reverse()) { // newest first
-      const logData = await fetch(`changelogs/${file}`).then(r => r.json());
-      renderChangelog(list, logData);
+    ALL_CHANGELOGS = [];
+
+    for (const file of files.reverse()) {
+      const log = await fetch(`changelogs/${file}`).then(r => r.json());
+      ALL_CHANGELOGS.push(log);
     }
+
+    renderLabels(labelFilters);
+    renderReleaseList(releaseList);
+    renderFilteredLogs();
+
   } catch (err) {
     console.error(err);
     list.innerHTML = `<p>Failed to load changelogs.</p>`;
   }
 }
 
-function renderChangelog(list, log) {
-  const container = document.createElement("div");
-  container.className = "changelog-block";
+function renderLabels(container) {
+  container.innerHTML = "";
 
-  const header = document.createElement("h3");
-  header.textContent = `${log.name} [${log.version}] - ${log.date}`;
-  container.appendChild(header);
+  const counts = {};
 
-  const body = document.createElement("div");
-
-  log.changes.forEach(section => {
-    const title = document.createElement("p");
-    title.textContent = `• ${section.title}`;
-    body.appendChild(title);
-
-    const ul = document.createElement("ul");
-    section.items.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      ul.appendChild(li);
+  ALL_CHANGELOGS.forEach(log => {
+    (log.labels || []).forEach(label => {
+      counts[label] = (counts[label] || 0) + 1;
     });
-    body.appendChild(ul);
   });
 
-  container.appendChild(body);
-  list.appendChild(container);
+  const allBtn = createLabelButton("All", ALL_CHANGELOGS.length);
+  container.appendChild(allBtn);
+
+  Object.keys(counts).forEach(label => {
+    container.appendChild(createLabelButton(label, counts[label]));
+  });
+}
+
+function createLabelButton(label, count) {
+  const btn = document.createElement("button");
+  btn.className = "label-btn";
+  btn.innerHTML = `${label} <span>${count}</span>`;
+
+  btn.addEventListener("click", () => {
+    ACTIVE_LABEL = label;
+    renderFilteredLogs();
+  });
+
+  return btn;
+}
+
+function renderReleaseList(container) {
+  container.innerHTML = "";
+
+  ALL_CHANGELOGS.forEach((log, i) => {
+    const btn = document.createElement("button");
+    btn.textContent = log.version;
+
+    btn.addEventListener("click", () => {
+      document.getElementById(`log-${i}`).scrollIntoView({ behavior: "smooth" });
+    });
+
+    container.appendChild(btn);
+  });
+}
+
+function renderFilteredLogs() {
+  const list = document.getElementById("changelog-list");
+  list.innerHTML = "";
+
+  ALL_CHANGELOGS.forEach((log, i) => {
+    if (ACTIVE_LABEL !== "All" && !(log.labels || []).includes(ACTIVE_LABEL)) return;
+
+    const container = document.createElement("div");
+    container.className = "changelog-block";
+    container.id = `log-${i}`;
+
+    const labelsHTML = (log.labels || [])
+      .map(l => `<span class="label ${l}">${l}</span>`)
+      .join(" ");
+
+    container.innerHTML = `
+      <div class="changelog-header">
+        <div>${labelsHTML}</div>
+        <button class="toggle-btn">▼</button>
+      </div>
+
+      <h3>${log.name}</h3>
+      <p class="changelog-date">${log.date}</p>
+
+      <div class="changelog-body">
+        ${log.changes.map(section => `
+          <p><strong>${section.title}</strong></p>
+          <ul>
+            ${section.items.map(i => `<li>${i}</li>`).join("")}
+          </ul>
+        `).join("")}
+      </div>
+    `;
+
+    const btn = container.querySelector(".toggle-btn");
+    const body = container.querySelector(".changelog-body");
+
+    btn.addEventListener("click", () => {
+      body.style.display = body.style.display === "none" ? "block" : "none";
+    });
+
+    list.appendChild(container);
+  });
 }
 
 async function loadGames() {
