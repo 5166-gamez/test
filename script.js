@@ -241,7 +241,8 @@ function renderCategories(container) {
   const categories = new Set(["All"]);
 
   ALL_GAMES.forEach(game => {
-    if (game.category) categories.add(game.category);
+     const category = game.category || "Miscellaneous";
+     categories.add(category);
   });
 
   categories.forEach(cat => {
@@ -276,8 +277,10 @@ function renderGames() {
   grid.innerHTML = "";
 
   const filtered = ALL_GAMES.filter(game => {
+    const category = game.category || "Miscellaneous";
+
     const matchesCategory =
-      ACTIVE_CATEGORY === "All" || game.category === ACTIVE_CATEGORY;
+      ACTIVE_CATEGORY === "All" || category === ACTIVE_CATEGORY;
 
     const matchesSearch =
       game.name.toLowerCase().includes(SEARCH_QUERY);
