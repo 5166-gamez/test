@@ -474,6 +474,18 @@ header nav {
   to { transform: translateY(0); opacity: 1; }
 }
 
+.options-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+}
+
 /* HEADER */
 #settings-header {
   display: flex;
