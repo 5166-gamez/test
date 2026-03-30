@@ -377,6 +377,34 @@ header nav {
   padding: 15px;
 }
 
+.label-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  margin-bottom: 6px;
+  border: none;
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.label-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.changelog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.changelog-date {
+  opacity: 0.6;
+  font-size: 14px;
+}
+
 /* MAIN */
 .changelog-main {
   flex: 1;
