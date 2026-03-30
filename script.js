@@ -278,14 +278,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// SETTINGS MENU SYSTEM
 function toggleSettingsMenu() {
-  const menu = document.getElementById("settings-menu");
-  const otherMenus = [document.getElementById("theme-menu"), document.getElementById("games-submenu"), document.getElementById("aspect-submenu")];
-  
-  // Close all other menus
-  otherMenus.forEach(m => m && (m.style.display = "none"));
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
+  if (!settingsOverlay) return;
+
+  settingsOverlay.style.display =
+    settingsOverlay.style.display === "flex" ? "none" : "flex";
+
+  if (settingsOverlay.style.display === "flex") {
+    renderSettingsCategories();
+  }
 }
 
 function toggleGamesSubMenu() {
