@@ -1,4 +1,4 @@
-// test line to see if its actually building 2
+// test line to see if its actually building IT SBUILDING BUT FOR SOME REASON THIS IS SYNTAX ERRORTING WTF
 const content = document.getElementById("content");
 
 function updateHeader(section) {
