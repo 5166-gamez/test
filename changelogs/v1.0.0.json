@@ -2,18 +2,15 @@
   "name": "First Update",
   "version": "v1.0.0",
   "date": "3/x/26",
+  "labels": ["Feature", "Content"],
   "changes": [
     {
       "title": "Games",
-      "items": [
-        "poop simulator"
-      ]
+      "items": ["poop simulator"]
     },
     {
       "title": "Additions",
-      "items": [
-        "Settings panel"
-      ]
+      "items": ["Settings panel"]
     }
   ]
 }
