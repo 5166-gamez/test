@@ -4,7 +4,6 @@ function updateHeader(section) {
   const icon = document.getElementById("page-icon");
   const name = document.getElementById("page-name");
 
-  // Update icon + label based on section
   icon.src = `icons/pageicons/${section}.png`;
   name.textContent = section.charAt(0).toUpperCase() + section.slice(1);
 }
@@ -198,7 +197,6 @@ async function loadGames() {
   const grid = document.getElementById("game-grid");
 
   try {
-    // Get the list of JSON files
     const res = await fetch("games/index.json");
     const files = await res.json();
 
@@ -265,11 +263,10 @@ function changeTheme(theme) {
   localStorage.setItem("theme", theme);
 }
 
-//cute fallback for nonexisting themes
 document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("theme");
 
-  const allowedThemes = ["dark", "light", "crimson", "midnight", "blossom", "shadow", "aurora", "solar", "forest", "neon"];
+  const allowedThemes = ["dark", "light", "crimson", "midnight", "blossom", "shadow", "aurora", "solar"];
 
   if (allowedThemes.includes(saved)) {
     document.documentElement.setAttribute("data-theme", saved);
@@ -292,7 +289,7 @@ function toggleSettingsMenu() {
 function toggleGamesSubMenu() {
   const submenu = document.getElementById("games-submenu");
   const aspect = document.getElementById("aspect-submenu");
-  aspect.style.display = "none"; // close inner submenu if open
+  aspect.style.display = "none";
   submenu.style.display = submenu.style.display === "block" ? "none" : "block";
 }
 
@@ -305,7 +302,6 @@ function setAspectRatio(ratio) {
   localStorage.setItem("aspectRatio", ratio);
   applyAspectRatio(ratio);
   
-  // Close all dropdowns
   ["aspect-submenu", "games-submenu", "settings-menu"].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.style.display = "none";
@@ -318,7 +314,7 @@ const settingsData = {
       name: "Theme",
       type: "options",
       display: "grid",
-      options: ["dark","light","crimson","midnight","blossom","shadow","aurora","solar","forest","neon"],
+      options: ["dark","light","crimson","midnight","blossom","shadow","aurora","solar"],
       storageKey: "theme",
       onChange: changeTheme
     }
@@ -364,7 +360,6 @@ function renderSettingsCategories() {
     settingsCategories.appendChild(btn);
   });
 
-  // Render first category by default
   renderSettingsOptions(Object.keys(settingsData)[0]);
 }
 
@@ -379,7 +374,6 @@ function renderSettingsOptions(category) {
     label.textContent = setting.name;
     div.appendChild(label);
 
-    // Options type
     if (setting.type === "options") {
       const optionContainer = document.createElement("div");
 
@@ -392,7 +386,6 @@ function renderSettingsOptions(category) {
         const btn = document.createElement("button");
         btn.textContent = opt;
 
-        // Highlight selected
         const saved = localStorage.getItem(setting.storageKey);
         if (saved === opt) btn.classList.add("selected");
 
@@ -408,7 +401,6 @@ function renderSettingsOptions(category) {
       div.appendChild(optionContainer);
     }
 
-    // Range type
     if (setting.type === "range") {
       const input = document.createElement("input");
       input.type = "range";
@@ -444,7 +436,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (savedRatio) applyAspectRatio(savedRatio);
 });
 
-// Collapse/Expand header
 function toggleHeader() {
   const header = document.getElementById("main-header");
   const arrow = document.getElementById("arrow-icon");
