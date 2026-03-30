@@ -47,6 +47,56 @@
   --dropdown-bg: rgba(10,15,30,0.95);
 }
 
+/* SHADOW */
+[data-theme="shadow"] {
+  --bg-gradient: linear-gradient(180deg, #1c0c2a, #2a123f, #3b1d5a, #1f0f2c);
+  --text: #dcd6e0;
+  --accent: #9b59b6;
+  --header-bg: rgba(28,12,42,0.75);
+  --panel-bg: rgba(255,255,255,0.05);
+  --dropdown-bg: rgba(30,20,40,0.95);
+}
+
+/* AURORA */
+[data-theme="aurora"] {
+  --bg-gradient: linear-gradient(180deg, #0f2c3c, #14455c, #1a6080, #0b1a26);
+  --text: #e0f7fa;
+  --accent: #00e5ff;
+  --header-bg: rgba(15,44,60,0.75);
+  --panel-bg: rgba(255,255,255,0.05);
+  --dropdown-bg: rgba(10,30,45,0.95);
+}
+
+/* SOLAR */
+[data-theme="solar"] {
+  --bg-gradient: linear-gradient(180deg, #fff1cc, #ffe199, #ffcf66, #ffd633);
+  --text: #3a2c1f;
+  --accent: #ff9800;
+  --header-bg: rgba(255,209,102,0.8);
+  --panel-bg: rgba(0,0,0,0.05);
+  --dropdown-bg: rgba(255,220,102,0.95);
+}
+
+/* FOREST */
+[data-theme="forest"] {
+  --bg-gradient: linear-gradient(180deg, #0a2c14, #0f3d1c, #1a4e26, #07300f);
+  --text: #d4f1c5;
+  --accent: #4caf50;
+  --header-bg: rgba(10,44,20,0.75);
+  --panel-bg: rgba(255,255,255,0.05);
+  --dropdown-bg: rgba(10,40,18,0.95);
+}
+
+/* NEON */
+[data-theme="neon"] {
+  --bg-gradient: linear-gradient(180deg, #0f0f0f, #1a1a1a, #2b2b2b, #0a0a0a);
+  --text: #00ffea;
+  --accent: #ff00ff;
+  --header-bg: rgba(20,20,20,0.75);
+  --panel-bg: rgba(255,255,255,0.05);
+  --dropdown-bg: rgba(25,25,25,0.95);
+}
+
 /* =========================
    GLOBAL BACKGROUND FIX
 ========================= */
