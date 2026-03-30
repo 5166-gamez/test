@@ -77,26 +77,6 @@
   --dropdown-bg: rgba(255,220,102,0.95);
 }
 
-/* FOREST */
-[data-theme="forest"] {
-  --bg-gradient: linear-gradient(180deg, #0a2c14, #0f3d1c, #1a4e26, #07300f);
-  --text: #d4f1c5;
-  --accent: #4caf50;
-  --header-bg: rgba(10,44,20,0.75);
-  --panel-bg: rgba(255,255,255,0.05);
-  --dropdown-bg: rgba(10,40,18,0.95);
-}
-
-/* NEON */
-[data-theme="neon"] {
-  --bg-gradient: linear-gradient(180deg, #0f0f0f, #1a1a1a, #2b2b2b, #0a0a0a);
-  --text: #00ffea;
-  --accent: #ff00ff;
-  --header-bg: rgba(20,20,20,0.75);
-  --panel-bg: rgba(255,255,255,0.05);
-  --dropdown-bg: rgba(25,25,25,0.95);
-}
-
 /* =========================
    GLOBAL BACKGROUND FIX
 ========================= */
