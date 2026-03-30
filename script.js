@@ -235,6 +235,22 @@ async function loadGames() {
   }
 }
 
+function renderGameCard(container, game) {
+  const card = document.createElement("div");
+  card.className = "game-card";
+
+  card.innerHTML = `
+    <img src="${game.icon}" alt="${game.name}" class="game-icon">
+    <h3 class="game-title">${game.name}</h3>
+  `;
+
+  card.addEventListener("click", () => {
+    openGamePage(game);
+  });
+
+  container.appendChild(card);
+}
+
 function renderCategories(container) {
   container.innerHTML = "";
 
