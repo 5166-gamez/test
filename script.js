@@ -25,23 +25,7 @@ function loadSection(section) {
       break;
 
     case "changelogs":
-      content.innerHTML = `
-        <div class="changelog-page">
-    
-          <div class="changelog-sidebar">
-            <h3>Filters</h3>
-            <div id="label-filters"></div>
-
-            <h3>Releases</h3>
-            <div id="release-list"></div>
-          </div>
-
-          <div class="changelog-main">
-            <div id="changelog-list"></div>
-          </div>
-
-        </div>
-      `;
+      loadChangelogs();
       break;
 
     case "contact":
@@ -70,7 +54,23 @@ let ALL_CHANGELOGS = [];
 let ACTIVE_LABEL = "All";
 
 async function loadChangelogs() {
-  content.innerHTML = `...`; // (layout from step 2)
+  content.innerHTML = `
+    <div class="changelog-page">
+    
+      <div class="changelog-sidebar">
+        <h3>Filters</h3>
+        <div id="label-filters"></div>
+
+        <h3>Releases</h3>
+        <div id="release-list"></div>
+      </div>
+
+      <div class="changelog-main">
+        <div id="changelog-list"></div>
+      </div>
+
+    </div>
+  `;
 
   const list = document.getElementById("changelog-list");
   const labelFilters = document.getElementById("label-filters");
