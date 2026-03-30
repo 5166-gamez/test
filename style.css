@@ -281,6 +281,62 @@ header nav {
 }
 
 /* =========================
+   GAMES TOP BAR
+========================= */
+
+.games-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.category-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.category-filters button {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-filters button:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.category-filters button.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* SEARCH */
+
+#game-search {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: 220px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+#game-search:focus {
+  border-color: var(--accent);
+}
+
+/* =========================
    GAME GRID
 ========================= */
 
