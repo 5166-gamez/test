@@ -317,6 +317,7 @@ const settingsData = {
     {
       name: "Theme",
       type: "options",
+      display: "grid",
       options: ["dark","light","crimson","midnight","blossom"],
       storageKey: "theme",
       onChange: changeTheme
@@ -327,6 +328,7 @@ const settingsData = {
     {
       name: "Aspect Ratio",
       type: "options",
+      display: "row",
       options: ["16:9","4:3","21:9","1:1","3:2"],
       storageKey: "aspectRatio",
       onChange: applyAspectRatio
@@ -380,6 +382,12 @@ function renderSettingsOptions(category) {
     // Options type
     if (setting.type === "options") {
       const optionContainer = document.createElement("div");
+
+      if (setting.display === "grid") {
+        optionContainer.className = "options-grid";
+      } else {
+        optionContainer.className = "options-row";
+      }
       setting.options.forEach(opt => {
         const btn = document.createElement("button");
         btn.textContent = opt;
