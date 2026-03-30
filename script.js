@@ -278,11 +278,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-function toggleThemeMenu() {
-  const menu = document.getElementById("theme-menu");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-
 // SETTINGS MENU SYSTEM
 function toggleSettingsMenu() {
   const menu = document.getElementById("settings-menu");
