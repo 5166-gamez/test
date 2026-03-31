@@ -2,5 +2,6 @@
   "name": "Rhythm Plus",
   "icon": "https://raw.githubusercontent.com/5166-gamez/test/refs/heads/main/icons/gameicons/rhyhtmplus.png",
   "src": "https://rhythm-plus.com",
-  "category": "Rhythm"
+  "category": "Rhythm",
+  "new": true
 }
