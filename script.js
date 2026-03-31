@@ -14,8 +14,15 @@ function loadSection(section) {
   switch (section) {
     case "home":
       content.innerHTML = `
-        <h2>Home</h2>
-        <p>Welcome to 5166 Gamez! Use the buttons below or the header above to navigate pages.</p>
+        <div class="home-hero">
+          <h1>5166 Gamez</h1>
+          <p>Play unblocked games anywhere. Fast, clean, and always updating.</p>
+
+          <div class="home-buttons">
+            <button onclick="loadSection('games')">Browse Games</button>
+            <button onclick="loadSection('changelogs')">What's New</button>
+          </div>
+        </div>
       `;
       break;
 
