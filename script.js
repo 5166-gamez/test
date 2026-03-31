@@ -358,6 +358,20 @@ function showGame(embedHTML) {
   }
 }
 
+async function loadHomeGames() {
+  const res = await fetch("games/index.json");
+  const files = await res.json();
+
+  const games = [];
+  for (const file of files.slice(-6)) { // last 6 games
+    const data = await fetch(`games/${file}`).then(r => r.json());
+    games.push(data);
+  }
+
+  const container = document.getElementById("home-games");
+  games.reverse().forEach(game => renderGameCard(container, game));
+}
+
 function changeTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
