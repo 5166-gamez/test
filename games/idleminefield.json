@@ -2,5 +2,6 @@
   "name": "idleMinefield",
   "icon": "https://raw.githubusercontent.com/5166-gamez/test/refs/heads/main/icons/gameicons/idleminefield.png",
   "src": "https://idleminefield.web.app/",
-  "category": "Idle"
+  "category": "Idle",
+  "new": false
 }
