@@ -23,6 +23,23 @@ function loadSection(section) {
             <button onclick="loadSection('changelogs')">What's New</button>
           </div>
         </div>
+
+        <div class="home-nav-grid">
+          <div class="nav-card" onclick="loadSection('games')">
+            <img src="icons/pageicons/games.png">
+            <h3>Games</h3>
+          </div>
+
+          <div class="nav-card" onclick="loadSection('changelogs')">
+            <img src="icons/pageicons/changelogs.png">
+            <h3>Changelogs</h3>
+          </div>
+
+          <div class="nav-card" onclick="loadSection('contact')">
+            <img src="icons/pageicons/contact.png">
+            <h3>Contact</h3>
+          </div>
+        </div>
       `;
       break;
 
