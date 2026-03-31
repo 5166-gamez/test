@@ -1,5 +1,6 @@
 {
   "name": "Papa's Bakeria",
   "icon": "https://raw.githubusercontent.com/5166-gamez/home/refs/heads/main/icons/gameicons/papasbakeria.png",
-  "src": "https://en.gameslol.net/data/awayjs/papa/bakeria.html"
+  "src": "https://en.gameslol.net/data/awayjs/papa/bakeria.html",
+  "new": false
 }
