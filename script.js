@@ -587,4 +587,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdownBtn = document.getElementById("link-dropdown-btn");
+  const dropdownMenu = document.getElementById("link-dropdown-menu");
+  const currentText = document.getElementById("current-link");
+
+  if (!dropdownBtn) return;
+
+  dropdownBtn.addEventListener("click", () => {
+    dropdownMenu.style.display =
+      dropdownMenu.style.display === "block" ? "none" : "block";
+  });
+
+  dropdownMenu.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const link = btn.getAttribute("data-link");
+      const name = btn.textContent;
+
+      currentText.textContent = name;
+      window.location.href = link;
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+      dropdownMenu.style.display = "none";
+    }
+  });
+});
+
 loadSection("home");
