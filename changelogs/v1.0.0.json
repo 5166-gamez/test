@@ -4,20 +4,23 @@
   "date": "Apr x, 2026",
   "labels": ["Feature", "Content"],
 
-  "note": "This release brings a whole new look on the website, making thinks easier to navigate and read. Enjoy what 5166 Gamez has in store, and expect many changes and additions beyond this release!",
+  "note": "This release brings a whole new look on the website, making things easier to navigate and read. Enjoy what 5166 Gamez has in store, and expect many changes and additions beyond this release!",
 
   "changes": [
     {
       "title": "Games",
-      "items": ["Rhythm Plus"]
+      "items": [
+        "Rhythm Plus",
+        "Boxing Random",
+        "Volley Random"
+      ]
     },
     {
       "title": "Additions",
-      "items": ["Game categories"]
-    },
-    {
-      "title": "Additions",
-      "items": ["Settings panel"]
+      "items": [
+        "Game categories",
+        "Settings panel"
+      ]
     }
   ]
 }
