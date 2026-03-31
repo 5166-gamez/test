@@ -19,7 +19,15 @@
       "title": "Additions",
       "items": [
         "Game categories",
+        "Game search bar",
         "Settings panel"
+      ]
+    },
+    {
+      "title": "Changes",
+      "items": [
+        "Intigrated themes dropdown into the settings panel under Site Preferences",
+        "Removed Braains.io"
       ]
     }
   ]
