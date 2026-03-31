@@ -457,6 +457,21 @@ header nav {
   padding: 15px;
 }
 
+.changelog-block {
+  background: var(--panel-bg);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+
+  padding: 18px;
+  margin-bottom: 20px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+  transition: all 0.25s ease;
+}
+
 .label-btn {
   width: 100%;
   display: flex;
@@ -475,9 +490,9 @@ header nav {
 }
 
 .changelog-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .changelog-date {
@@ -488,6 +503,15 @@ header nav {
 /* MAIN */
 .changelog-main {
   flex: 1;
+}
+
+.changelog-body {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.changelog-body ul {
+  margin: 8px 0 16px 20px;
 }
 
 .label {
