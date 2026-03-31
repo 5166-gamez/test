@@ -500,6 +500,17 @@ header nav {
   font-size: 14px;
 }
 
+.changelog-note {
+  background: rgba(255,255,255,0.05);
+  border-left: 3px solid var(--accent);
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
 /* MAIN */
 .changelog-main {
   flex: 1;
