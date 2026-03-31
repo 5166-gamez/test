@@ -2,5 +2,6 @@
   "name": "Vex 3",
   "icon": "https://raw.githubusercontent.com/5166-gamez/test/refs/heads/main/icons/gameicons/vex3.png",
   "src": "https://html5.gamedistribution.com/762c932b4db74c6da0c1d101b2da8be6/?gd_sdk_referrer_url=https%3A%2F%2Fwww.y8.com%2Fgames%2Fvex_3&key=y8&value=default",
-  "category": "Platformer"
+  "category": "Platformer",
+  "new": false
 }
