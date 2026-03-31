@@ -1,5 +1,6 @@
 {
   "name": "Soccer Random",
   "icon": "https://raw.githubusercontent.com/5166-gamez/test/refs/heads/main/icons/gameicons/soccerrandom.png",
-  "src": "https://soccer-randomx.github.io/soccer-random/"
+  "src": "https://soccer-randomx.github.io/soccer-random/",
+  "new": false
 }
