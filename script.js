@@ -168,12 +168,16 @@ function renderFilteredLogs() {
       <p class="changelog-date">${log.date}</p>
 
       <div class="changelog-body">
+
+        ${log.note ? `<p class="changelog-note">${log.note}</p>` : ""}
+
         ${log.changes.map(section => `
           <p><strong>${section.title}</strong></p>
           <ul>
             ${section.items.map(i => `<li>${i}</li>`).join("")}
           </ul>
         `).join("")}
+
       </div>
     `;
 
