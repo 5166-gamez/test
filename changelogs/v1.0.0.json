@@ -3,6 +3,9 @@
   "version": "v1.0.0",
   "date": "Apr x, 2026",
   "labels": ["Feature", "Content"],
+
+  "note": "5166 is officially released/finished! Expect many changes beyond this release.",
+
   "changes": [
     {
       "title": "Games",
