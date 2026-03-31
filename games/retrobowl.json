@@ -1,5 +1,6 @@
 {
   "name": "Retro Bowl",
   "icon": "https://raw.githubusercontent.com/5166-gamez/test/refs/heads/main/icons/gameicons/retrobowl.png",
-  "src": "https://game316009.konggames.com/gamez/0031/6009/live/index.html"
+  "src": "https://game316009.konggames.com/gamez/0031/6009/live/index.html",
+  "new": false
 }
