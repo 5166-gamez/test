@@ -2,5 +2,6 @@
   "name": "Taiko Web",
   "icon": "https://raw.githubusercontent.com/5166-gamez/test/refs/heads/main/icons/gameicons/taikoweb.png",
   "src": "https://cjdgrevival.com/",
-  "category": "Rhythm"
+  "category": "Rhythm",
+  "new": false
 }
