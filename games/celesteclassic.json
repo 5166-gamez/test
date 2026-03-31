@@ -2,5 +2,6 @@
   "name": "CELESTE Classic",
   "icon": "https://raw.githubusercontent.com/5166-gamez/test/refs/heads/main/icons/gameicons/celesteclassic.png",
   "src": "https://exok.com/minigames/celeste.html",
-  "category": "Platformer"
+  "category": "Platformer",
+  "new": false
 }
