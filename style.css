@@ -705,3 +705,57 @@ header nav {
   background: var(--accent);
   color: #fff;
 }
+
+/* home stuffs */
+.home-hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.home-hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.home-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.home-buttons button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+/* NAV CARDS */
+.home-nav-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-card {
+  background: var(--panel-bg);
+  padding: 20px;
+  border-radius: 14px;
+  width: 160px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.nav-card:hover {
+  transform: translateY(-6px);
+}
+
+.home-section {
+  padding: 20px 40px;
+}
