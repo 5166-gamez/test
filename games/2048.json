@@ -1,5 +1,6 @@
 {
   "name": "2048",
   "icon": "https://raw.githubusercontent.com/5166-gamez/test/refs/heads/main/icons/gameicons/2048.png",
-  "src": "https://www.2048.org"
+  "src": "https://www.2048.org",
+  "new": false
 }
