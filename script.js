@@ -393,10 +393,6 @@ function openGamePage(game) {
     .addEventListener("click", () => loadSection("games"));
 }
 
-  const backBtn = document.getElementById("back-button");
-  backBtn.addEventListener("click", () => loadSection("games"));
-}
-
 function showGame(embedHTML) {
   const frame = document.getElementById("game-frame");
   frame.innerHTML = embedHTML;
