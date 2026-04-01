@@ -92,11 +92,11 @@ function loadSection(section) {
 
             <div class="contact-card" data-form="feedback">
               <h4>🧪 Version Feedback</h4>
-              <p>Report bugs or give feedback</p>
+              <p>Give feedback on a specific version</p>
             </div>
 
             <div class="contact-card" data-form="ideas">
-              <h4>💡 Ideas</h4>
+              <h4>💡 Suggestions/Feedback</h4>
               <p>Suggest features or improvements</p>
             </div>
           </div>
@@ -130,7 +130,7 @@ function setupContactPage() {
   const forms = {
     suggest: "https://forms.gle/HRsR13dexkapaixH7",
     feedback: "https://forms.gle/qYNV3w9FzJhvd8Bj9",
-    ideas: "https://forms.gle/qYNV3w9FzJhvd8Bj9"
+    ideas: "https://forms.gle/Mv5Xt3qe4DwMYwNbA"
   };
 
   cards.forEach(card => {
