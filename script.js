@@ -135,13 +135,11 @@ function setupContactPage() {
 
   cards.forEach(card => {
     card.addEventListener("click", () => {
-      // active state
       cards.forEach(c => c.classList.remove("active"));
       card.classList.add("active");
 
       const formKey = card.getAttribute("data-form");
 
-      // fade effect
       frame.style.opacity = 0;
 
       setTimeout(() => {
@@ -332,7 +330,7 @@ async function loadGames() {
 
     searchInput.addEventListener("input", () => {
       SEARCH_QUERY = searchInput.value.toLowerCase();
-      ACTIVE_CATEGORY = "All"; // reset filter when searching
+      ACTIVE_CATEGORY = "All";
       highlightActiveCategory();
       renderGames();
     });
@@ -378,7 +376,7 @@ function renderCategories(container) {
 
     btn.addEventListener("click", () => {
       ACTIVE_CATEGORY = cat;
-      SEARCH_QUERY = ""; // optional: clear search when filtering
+      SEARCH_QUERY = "";
       document.getElementById("game-search").value = "";
       highlightActiveCategory();
       renderGames();
@@ -426,13 +424,11 @@ function renderGames() {
 function openGamePage(game) {
   const currentCategory = game.category || "Miscellaneous";
 
-  // find similar games
   const similarGames = ALL_GAMES.filter(g => {
     const category = g.category || "Miscellaneous";
     return category === currentCategory && g.name !== game.name;
   });
 
-  // ONLY update the big page header
   document.getElementById("page-header-icon").src = game.icon;
   document.getElementById("page-header-title").textContent = game.name;
   document.getElementById("page-header-desc").textContent = currentCategory;
@@ -491,7 +487,6 @@ function openGamePage(game) {
     renderGameCard(similarContainer, g);
   });
 
-  // re-apply aspect ratio if saved
   const savedRatio = localStorage.getItem("aspectRatio");
   if (savedRatio) applyAspectRatio(savedRatio);
 }
@@ -513,7 +508,7 @@ async function loadHomeGames() {
   const files = await res.json();
 
   const games = [];
-  for (const file of files.slice(-6)) { // last 6 games
+  for (const file of files.slice(-6)) {
     const data = await fetch(`games/${file}`).then(r => r.json());
     games.push(data);
   }
