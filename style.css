@@ -421,8 +421,15 @@ header nav {
   border-radius: 6px;
 
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  animation: pulse 1.5s infinite;
 
   letter-spacing: 0.5px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
 
 @keyframes cardFade {
