@@ -29,11 +29,9 @@ function updateHeader(section) {
 
   const data = PAGE_DATA[section];
 
-  // Navbar (top bar)
   icon.src = `icons/pageicons/${section}.png`;
   name.textContent = data.name;
 
-  // Page header (big section)
   headerIcon.src = `icons/pageicons/${section}.png`;
   headerTitle.textContent = data.name;
   headerDesc.textContent = data.desc;
@@ -84,24 +82,77 @@ function loadSection(section) {
 
     case "contact":
       content.innerHTML = `
-        <h2>Contact</h2>
-        <p>Fill out the form below to suggest a game:</p>
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfTl_4-B2gHmKEfpPzcFmRuFvSs_BfqOgZidXwgy8iGI4q8Iw/viewform?embedded=true" 
-          width="640" 
-          height="834" 
-          frameborder="0" 
-          marginheight="0" 
-          marginwidth="0"
-          style="border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.2); max-width: 90vw;">
-          Loading…
-        </iframe>
+        <div class="contact-page">
+
+          <div class="contact-sidebar">
+            <div class="contact-card active" data-form="suggest">
+              <h4>🎮 Game Suggestion</h4>
+              <p>Recommend a game to add</p>
+            </div>
+
+            <div class="contact-card" data-form="feedback">
+              <h4>🧪 Version Feedback</h4>
+              <p>Report bugs or give feedback</p>
+            </div>
+
+            <div class="contact-card" data-form="ideas">
+              <h4>💡 Ideas</h4>
+              <p>Suggest features or improvements</p>
+            </div>
+          </div>
+
+          <div class="contact-main">
+            <div id="contact-placeholder">
+              Select a category to get started.
+            </div>
+
+            <iframe id="contact-frame"
+              style="display:none; width:100%; height:800px; border:none; border-radius:12px;">
+            </iframe>
+          </div>
+
+        </div>
       `;
+
+      setupContactPage();
       break;
 
-    default:
+      default:
       loadSection("home");
   }
+}
+
+function setupContactPage() {
+  const cards = document.querySelectorAll(".contact-card");
+  const frame = document.getElementById("contact-frame");
+  const placeholder = document.getElementById("contact-placeholder");
+
+  const forms = {
+    suggest: "https://docs.google.com/forms/d/e/YOUR_FORM_1/viewform?embedded=true",
+    feedback: "https://docs.google.com/forms/d/e/YOUR_FORM_2/viewform?embedded=true",
+    ideas: "https://docs.google.com/forms/d/e/YOUR_FORM_3/viewform?embedded=true"
+  };
+
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      // active state
+      cards.forEach(c => c.classList.remove("active"));
+      card.classList.add("active");
+
+      const formKey = card.getAttribute("data-form");
+
+      // fade effect
+      frame.style.opacity = 0;
+
+      setTimeout(() => {
+        frame.src = forms[formKey];
+        frame.style.display = "block";
+        placeholder.style.display = "none";
+
+        frame.style.opacity = 1;
+      }, 150);
+    });
+  });
 }
 
 let ALL_CHANGELOGS = [];
