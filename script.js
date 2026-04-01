@@ -440,7 +440,9 @@ function openGamePage(game) {
   content.innerHTML = `
     <div class="game-page">
 
-      <button id="back-button">← Back</button>
+      <div class="game-topbar">
+        <button id="back-button">← Back</button>
+      </div>
 
       <div class="game-container">
         <iframe src="${game.src}" width="1920" height="1080" frameborder="0" allowfullscreen></iframe>
