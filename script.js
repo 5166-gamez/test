@@ -445,7 +445,12 @@ function openGamePage(game) {
       </div>
 
       <div class="game-container">
-        <iframe src="${game.src}" width="1920" height="1080" frameborder="0" allowfullscreen></iframe>
+        <iframe id="game-iframe" src="${game.src}" width="1920" height="1080" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="game-actions">
+        <button id="fullscreen-btn">Fullscreen</button>
+        <button id="open-embed-btn">Open Embed</button>
       </div>
 
       <div class="similar-section">
@@ -459,7 +464,22 @@ function openGamePage(game) {
   document.getElementById("back-button")
     .addEventListener("click", () => loadSection("games"));
 
-  // render similar games
+  const iframe = document.getElementById("game-iframe");
+
+  document.getElementById("fullscreen-btn").addEventListener("click", () => {
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) {
+      iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) {
+      iframe.msRequestFullscreen();
+    }
+  });
+
+  document.getElementById("open-embed-btn").addEventListener("click", () => {
+    window.open(game.src, "_blank");
+  });
+  
   const similarContainer = document.getElementById("similar-games");
 
   if (similarGames.length === 0) {
