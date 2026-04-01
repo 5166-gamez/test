@@ -1,11 +1,42 @@
 const content = document.getElementById("content");
 
+const PAGE_DATA = {
+  home: {
+    name: "Home",
+    desc: "Welcome to 5166 Gamez. Play unblocked games anywhere."
+  },
+  games: {
+    name: "Games",
+    desc: "The list of all games. If you want to find a type of game to play, you can filter through the set categories."
+  },
+  changelogs: {
+    name: "Changelogs",
+    desc: "View updates, fixes, and new features added over time."
+  },
+  contact: {
+    name: "Contact",
+    desc: "Suggest games or get in touch using the form below."
+  }
+};
+
 function updateHeader(section) {
   const icon = document.getElementById("page-icon");
   const name = document.getElementById("page-name");
 
+  const headerIcon = document.getElementById("page-header-icon");
+  const headerTitle = document.getElementById("page-header-title");
+  const headerDesc = document.getElementById("page-header-desc");
+
+  const data = PAGE_DATA[section];
+
+  // Navbar (top bar)
   icon.src = `icons/pageicons/${section}.png`;
-  name.textContent = section.charAt(0).toUpperCase() + section.slice(1);
+  name.textContent = data.name;
+
+  // Page header (big section)
+  headerIcon.src = `icons/pageicons/${section}.png`;
+  headerTitle.textContent = data.name;
+  headerDesc.textContent = data.desc;
 }
 
 function loadSection(section) {
@@ -222,8 +253,6 @@ let SEARCH_QUERY = "";
 
 async function loadGames() {
   content.innerHTML = `
-    <h2>Games</h2>
-
     <div class="games-topbar">
       <div id="category-filters" class="category-filters"></div>
       <input id="game-search" type="text" placeholder="🔍 Search..." />
@@ -343,6 +372,13 @@ function renderGames() {
 }
 
 function openGamePage(game) {
+  document.getElementById("page-header-icon").src = game.icon;
+  document.getElementById("page-header-title").textContent = game.name;
+  document.getElementById("page-header-desc").textContent = "";
+
+  document.getElementById("page-name").textContent = game.name;
+  document.getElementById("page-icon").src = game.icon;
+  
   content.innerHTML = `
     <div class="game-page">
       <div class="game-header">
