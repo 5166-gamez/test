@@ -348,6 +348,7 @@ function renderGameCard(container, game) {
   card.className = "game-card";
 
   card.innerHTML = `
+    ${game.new ? `<div class="new-badge">NEW</div>` : ""}
     <img src="${game.icon}" alt="${game.name}" class="game-icon">
     <h3 class="game-title">${game.name}</h3>
   `;
