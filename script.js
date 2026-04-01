@@ -424,10 +424,18 @@ function renderGames() {
 }
 
 function openGamePage(game) {
+  const currentCategory = game.category || "Miscellaneous";
+
+  // find similar games
+  const similarGames = ALL_GAMES.filter(g => {
+    const category = g.category || "Miscellaneous";
+    return category === currentCategory && g.name !== game.name;
+  });
+
   // ONLY update the big page header
   document.getElementById("page-header-icon").src = game.icon;
   document.getElementById("page-header-title").textContent = game.name;
-  document.getElementById("page-header-desc").textContent = "";
+  document.getElementById("page-header-desc").textContent = currentCategory;
 
   content.innerHTML = `
     <div class="game-page">
@@ -438,11 +446,32 @@ function openGamePage(game) {
         <iframe src="${game.src}" width="1920" height="1080" frameborder="0" allowfullscreen></iframe>
       </div>
 
+      <div class="similar-section">
+        <h2>Similar Games</h2>
+        <div id="similar-games" class="game-grid"></div>
+      </div>
+
     </div>
   `;
 
   document.getElementById("back-button")
     .addEventListener("click", () => loadSection("games"));
+
+  // render similar games
+  const similarContainer = document.getElementById("similar-games");
+
+  if (similarGames.length === 0) {
+    similarContainer.innerHTML = "<p>No similar games found.</p>";
+    return;
+  }
+
+  similarGames.forEach(g => {
+    renderGameCard(similarContainer, g);
+  });
+
+  // re-apply aspect ratio if saved
+  const savedRatio = localStorage.getItem("aspectRatio");
+  if (savedRatio) applyAspectRatio(savedRatio);
 }
 
 function showGame(embedHTML) {
