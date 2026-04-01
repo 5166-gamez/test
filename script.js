@@ -372,28 +372,26 @@ function renderGames() {
 }
 
 function openGamePage(game) {
+  // ONLY update the big page header
   document.getElementById("page-header-icon").src = game.icon;
   document.getElementById("page-header-title").textContent = game.name;
   document.getElementById("page-header-desc").textContent = "";
 
-  document.getElementById("page-name").textContent = game.name;
-  document.getElementById("page-icon").src = game.icon;
-  
   content.innerHTML = `
     <div class="game-page">
-      <div class="game-header">
-        <button id="back-button">← Back</button>
-        <div class="game-info">
-          <img src="${game.icon}" alt="${game.name}" class="game-header-icon">
-          <h2 class="game-header-title">${game.name}</h2>
-        </div>
-      </div>
+
+      <button id="back-button">← Back</button>
 
       <div class="game-container">
         <iframe src="${game.src}" width="1920" height="1080" frameborder="0" allowfullscreen></iframe>
       </div>
+
     </div>
   `;
+
+  document.getElementById("back-button")
+    .addEventListener("click", () => loadSection("games"));
+}
 
   const backBtn = document.getElementById("back-button");
   backBtn.addEventListener("click", () => loadSection("games"));
