@@ -161,7 +161,7 @@ header nav {
 }
 
 /* =========================
-   PAGE HEADER (TOP LEFT BLOCK)
+   PAGE HEADER
 ========================= */
 
 #page-header {
@@ -169,7 +169,7 @@ header nav {
   align-items: center;
   gap: 18px;
 
-  padding: 30px 40px 10px 40px; /* nice spacing from edges */
+  padding: 30px 40px 10px 40px;
 }
 
 #page-header-icon {
@@ -469,13 +469,13 @@ header nav {
 }
 
 /* =========================
-   GAME TOP BAR (BACK BUTTON)
+   GAME TOP BAR 
 ========================= */
 
 .game-topbar {
   display: flex;
   align-items: center;
-  padding: 0 40px 10px 40px; /* aligns with page header */
+  padding: 0 40px 10px 40px;
 }
 
 /* Back Button */
