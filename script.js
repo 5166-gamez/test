@@ -3,7 +3,7 @@ const content = document.getElementById("content");
 const PAGE_DATA = {
   home: {
     name: "Home",
-    desc: "Welcome to 5166 Gamez. Play unblocked games anywhere."
+    desc: "Welcome to 5166 Gamez! Use the buttons below or the header above to navigate throughout the site."
   },
   games: {
     name: "Games",
@@ -15,7 +15,7 @@ const PAGE_DATA = {
   },
   contact: {
     name: "Contact",
-    desc: "Suggest games or get in touch using the form below."
+    desc: "Use the designated forms to suggest a game, feature, or help give feedback to improve the site."
   }
 };
 
@@ -45,7 +45,7 @@ function loadSection(section) {
       content.innerHTML = `
         <div class="home-hero">
           <h1>5166 Gamez</h1>
-          <p>Play unblocked games anywhere. Fast, clean, and always updating.</p>
+          <p>The best unblocked games site out there.</p>
 
           <div class="home-buttons">
             <button onclick="loadSection('games')">Browse Games</button>
