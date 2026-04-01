@@ -161,6 +161,44 @@ header nav {
 }
 
 /* =========================
+   PAGE HEADER (TOP LEFT BLOCK)
+========================= */
+
+#page-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 30px 40px 10px 40px; /* nice spacing from edges */
+}
+
+#page-header-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+#page-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+#page-header-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+#page-header-desc {
+  margin-top: 6px;
+  opacity: 0.75;
+  max-width: 600px;
+  line-height: 1.4;
+}
+
+/* =========================
    NAV BUTTONS
 ========================= */
 
