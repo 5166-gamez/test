@@ -128,9 +128,9 @@ function setupContactPage() {
   const placeholder = document.getElementById("contact-placeholder");
 
   const forms = {
-    suggest: "https://docs.google.com/forms/d/e/YOUR_FORM_1/viewform?embedded=true",
-    feedback: "https://docs.google.com/forms/d/e/YOUR_FORM_2/viewform?embedded=true",
-    ideas: "https://docs.google.com/forms/d/e/YOUR_FORM_3/viewform?embedded=true"
+    suggest: "https://forms.gle/HRsR13dexkapaixH7",
+    feedback: "https://forms.gle/qYNV3w9FzJhvd8Bj9",
+    ideas: "https://forms.gle/qYNV3w9FzJhvd8Bj9"
   };
 
   cards.forEach(card => {
