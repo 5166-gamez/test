@@ -469,6 +469,43 @@ header nav {
 }
 
 /* =========================
+   GAME TOP BAR (BACK BUTTON)
+========================= */
+
+.game-topbar {
+  display: flex;
+  align-items: center;
+  padding: 0 40px 10px 40px; /* aligns with page header */
+}
+
+/* Back Button */
+#back-button {
+  background: var(--panel-bg);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text);
+
+  padding: 8px 16px;
+  border-radius: 10px;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  backdrop-filter: blur(8px);
+
+  transition: all 0.2s ease;
+}
+
+#back-button:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+#back-button:active {
+  transform: scale(0.96);
+}
+
+/* =========================
    PLAY BUTTON
 ========================= */
 
@@ -588,6 +625,38 @@ header nav {
   font-size: 14px;
   line-height: 1.6;
   opacity: 0.9;
+}
+
+/* =========================
+   CHANGELOG RELEASE BUTTONS
+========================= */
+
+#release-list button {
+  width: 100%;
+  text-align: left;
+
+  padding: 8px 10px;
+  margin-bottom: 6px;
+
+  background: rgba(255,255,255,0.05);
+  border: none;
+  border-radius: 8px;
+
+  color: var(--text);
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+#release-list button:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateX(4px);
+}
+
+/* Optional: active highlight when clicked */
+#release-list button.active {
+  background: var(--accent);
+  color: #fff;
 }
 
 /* MAIN */
