@@ -855,3 +855,50 @@ header nav {
 #link-dropdown-menu button:hover {
   background: rgba(255,255,255,0.1);
 }
+
+/* contact stuffs */
+
+.contact-page {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+}
+
+.contact-sidebar {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-card {
+  background: var(--panel-bg);
+  border-radius: 12px;
+  padding: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.08);
+}
+
+.contact-card.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(0,200,255,0.3);
+}
+
+.contact-main {
+  flex: 1;
+  background: var(--panel-bg);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+#contact-placeholder {
+  text-align: center;
+  opacity: 0.6;
+  margin-top: 50px;
+}
