@@ -4,7 +4,7 @@
   "date": "Apr 6, 2026",
   "labels": ["Feature", "Content"],
 
-  "note": "This release brings a whole new look on the website, making things easier to navigate and read. Enjoy what 5166 Gamez has in store, and expect many changes and additions beyond this release!",
+  "note": "This release brings a whole fresh new look on the website, making things easier to navigate and read, alongside a small batch of new games. Enjoy what 5166 Gamez has in store, and expect many changes and additions beyond this release!",
 
   "changes": [
     {
@@ -12,6 +12,7 @@
       "items": [
         "8 Ball Pool",
         "Boxing Random",
+        "Five Nights at Freddy's",
         "Rhythm Plus",
         "Papa's Cupcakeria",
         "Papa's Pancakeria",
@@ -26,13 +27,21 @@
         "Game categories",
         "Game search bar",
         "Settings panel",
-        "Added a link dropdown to the header"
+        "Added 2 new contact methods; Version Feedback & Suggestions/Feedback",
+        "Added a fade-in animation for game cards loading",
+        "Added a link dropdown to the header",
+        "New Aurora theme"
       ]
     },
     {
       "title": "Changes",
       "items": [
+        "Updated changelogs page to include release searching and type filtering",
+        "Visually upgraded the changelog blocks",
+        "Updated page information headers to include the icon and description",
         "Intigrated themes dropdown into the settings panel under Site Preferences",
+        "Tweaked every theme",
+        "Updated header buttons",
         "Removed Braains.io"
       ]
     }
