@@ -2,9 +2,9 @@
   "name": "Initial Release 🎉",
   "version": "v1.0.0",
   "date": "Apr 6, 2026",
-  "labels": ["Feature", "Content"],
+  "labels": ["Feature", "Content", "Fix"],
 
-  "note": "This release brings a whole fresh new look on the website, making things easier to navigate and read, alongside a small batch of new games. Enjoy what 5166 Gamez has in store, and expect many changes and additions beyond this release!",
+  "note": "This release brings a whole fresh new look on the website, making things easier to navigate and read, alongside a small batch of new games. Enjoy what 5166 Gamez has in store, and expect many changes and additions beyond this release! Also, most of the games that are not present but were during the original Google Sites version will return through future patches/hotfixes.",
 
   "changes": [
     {
@@ -43,8 +43,18 @@
         "Updated page information headers to include the icon and description",
         "Intigrated themes dropdown into the settings panel under Site Preferences",
         "Tweaked every theme",
+        "Replaced every placeholder icon with a new one (except for Machinery still)",
         "Updated header buttons",
+        "Updated Drift Boss embed",
         "Removed Braains.io"
+      ]
+    },
+    {
+      "title": "Fixes",
+      "items": [
+        "Fixed Color Tunnel embed",
+        "Fixed Cookie Clicker embed",
+        "Fixed Soccer Random embed"
       ]
     }
   ]
