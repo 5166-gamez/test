@@ -39,6 +39,7 @@
     {
       "title": "Changes",
       "items": [
+        "Upgraded Eaglercraft 1.8 -> Eaglercraft 1.12",
         "Updated changelogs page to include release searching and type filtering",
         "Visually upgraded the changelog blocks",
         "Updated page information headers to include the icon and description",
