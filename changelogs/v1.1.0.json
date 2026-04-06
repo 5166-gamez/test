@@ -10,11 +10,14 @@
     {
       "title": "New Games",
       "items": [
+        "Adam and Eve 2",
+        "Adam and Eve 3",
         "Duck Life",
         "Duck Life 2",
         "Duck Life 3",
         "Duck Life 4",
-        "Jumping Shell"
+        "Jumping Shell",
+        "Nugget Royale"
       ]
     },
     {
@@ -26,7 +29,7 @@
     {
       "title": "Changes",
       "items": [
-        "poop"
+        "Version titles will now display its version"
       ]
     }
   ]
