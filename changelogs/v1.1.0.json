@@ -1,0 +1,29 @@
+{
+  "name": "v1.1.0 - Content Drop & More Features ✨",
+  "version": "v1.1.0",
+  "date": "Apr x, 2026",
+  "labels": ["Feature", "Content"],
+
+  "note": "This small hotfix returns a handfull of games from the original Google Sites version, alongside a batch of new games & features.",
+
+  "changes": [
+    {
+      "title": "New Games",
+      "items": [
+        "poop"
+      ]
+    },
+    {
+      "title": "Additions",
+      "items": [
+        "poop"
+      ]
+    },
+    {
+      "title": "Changes",
+      "items": [
+        "poop"
+      ]
+    }
+  ]
+}
