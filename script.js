@@ -69,6 +69,46 @@ function loadSection(section) {
             <h3>Contact</h3>
           </div>
         </div>
+
+        <!-- NEW SECTION -->
+        <div class="home-info-grid">
+
+          <div class="info-card">
+            <h2>About 5166 Gamez</h2>
+            <p>
+              5166 Gamez started back in 2022 as a small project on Google Sites,
+              built with one goal: make games easy to access anywhere.
+              Since then, it’s evolved into a full custom site powered by GitHub Pages,
+              with better performance, more features, and a constantly growing library.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h2>Game Choices</h2>
+            <p>
+              No filler, no low-quality spam. Just solid games worth playing.
+              Everything added is picked to actually be fun, whether it's quick
+              time-killers or longer games you can grind.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h2>Fast & Unblocked</h2>
+            <p>
+              Multiple mirrors (GitHub, Cloudflare, Vercel, Netlify) keep the site
+              accessible even if one link is blocked. Built to load fast and stay usable.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h2>Always Updating</h2>
+            <p>
+              New games, fixes, and improvements are added regularly.
+              Check the changelogs to see what’s new and what’s improved.
+            </p>
+          </div>
+
+        </div>
       `;
       break;
 
