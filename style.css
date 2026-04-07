@@ -979,6 +979,41 @@ header nav {
   flex-wrap: wrap;
 }
 
+/* HOME INFO GRID */
+.home-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px 40px 60px;
+}
+
+.info-card {
+  background: var(--panel-bg);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 20px;
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.25s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.info-card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
 .nav-card {
   background: var(--panel-bg);
   padding: 20px;
