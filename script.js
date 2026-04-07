@@ -527,7 +527,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const allowedThemes = [
     "dark","light","crimson","midnight","blossom","shadow","aurora","solar",
-    "ocean","forest","neon","sunset","frost","amethyst","prism","ember"
+    "forest","neon","sunset","frost","amethyst","prism","ember"
   ];
 
   if (allowedThemes.includes(saved)) {
@@ -578,7 +578,7 @@ const settingsData = {
       display: "grid",
       options: [
         "dark","light","crimson","midnight","blossom","shadow","aurora","solar",
-        "ocean","forest","neon","sunset","frost","amethyst","prism","ember"
+        "forest","neon","sunset","frost","amethyst","prism","ember"
       ],     
       storageKey: "theme",
       onChange: changeTheme
