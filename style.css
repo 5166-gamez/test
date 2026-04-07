@@ -49,12 +49,12 @@
 
 /* SHADOW */
 [data-theme="shadow"] {
-  --bg-gradient: linear-gradient(180deg, #1c0c2a, #2a123f, #3b1d5a, #1f0f2c);
-  --text: #dcd6e0;
-  --accent: #9b59b6;
-  --header-bg: rgba(28,12,42,0.75);
-  --panel-bg: rgba(255,255,255,0.05);
-  --dropdown-bg: rgba(30,20,40,0.95);
+  --bg-gradient: linear-gradient(180deg, #0d0614, #140a1f, #1c0f2b, #0a0412);
+  --text: #cfc7d6;
+  --accent: #6f42c1;
+  --header-bg: rgba(15,8,25,0.8);
+  --panel-bg: rgba(255,255,255,0.04);
+  --dropdown-bg: rgba(12,6,20,0.95);
 }
 
 /* AURORA */
@@ -75,16 +75,6 @@
   --header-bg: rgba(255,209,102,0.8);
   --panel-bg: rgba(0,0,0,0.05);
   --dropdown-bg: rgba(255,220,102,0.95);
-}
-
-/* OCEAN */
-[data-theme="ocean"] {
-  --bg-gradient: linear-gradient(180deg, #001f2f, #003f5c, #005f73, #001219);
-  --text: #e0f7ff;
-  --accent: #00b4d8;
-  --header-bg: rgba(0,30,50,0.75);
-  --panel-bg: rgba(255,255,255,0.05);
-  --dropdown-bg: rgba(0,25,40,0.95);
 }
 
 /* FOREST */
