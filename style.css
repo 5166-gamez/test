@@ -77,6 +77,86 @@
   --dropdown-bg: rgba(255,220,102,0.95);
 }
 
+/* OCEAN */
+[data-theme="ocean"] {
+  --bg-gradient: linear-gradient(180deg, #001f2f, #003f5c, #005f73, #001219);
+  --text: #e0f7ff;
+  --accent: #00b4d8;
+  --header-bg: rgba(0,30,50,0.75);
+  --panel-bg: rgba(255,255,255,0.05);
+  --dropdown-bg: rgba(0,25,40,0.95);
+}
+
+/* FOREST */
+[data-theme="forest"] {
+  --bg-gradient: linear-gradient(180deg, #0b1d13, #123524, #1b4332, #081c15);
+  --text: #d8f3dc;
+  --accent: #52b788;
+  --header-bg: rgba(10,30,20,0.75);
+  --panel-bg: rgba(255,255,255,0.05);
+  --dropdown-bg: rgba(10,25,18,0.95);
+}
+
+/* NEON */
+[data-theme="neon"] {
+  --bg-gradient: linear-gradient(180deg, #050505, #0a0a0a, #111111, #000000);
+  --text: #eaffff;
+  --accent: #00ffcc;
+  --header-bg: rgba(10,10,10,0.8);
+  --panel-bg: rgba(0,255,200,0.05);
+  --dropdown-bg: rgba(10,10,10,0.95);
+}
+
+/* SUNSET */
+[data-theme="sunset"] {
+  --bg-gradient: linear-gradient(180deg, #2b0f1c, #5a1e3a, #a53860, #ff7b54);
+  --text: #ffe5ec;
+  --accent: #ff9e00;
+  --header-bg: rgba(60,20,40,0.75);
+  --panel-bg: rgba(255,255,255,0.06);
+  --dropdown-bg: rgba(40,15,30,0.95);
+}
+
+/* FROST */
+[data-theme="frost"] {
+  --bg-gradient: linear-gradient(180deg, #e6f7ff, #cceeff, #b3e5ff, #f0fbff);
+  --text: #1b2a33;
+  --accent: #00aaff;
+  --header-bg: rgba(255,255,255,0.75);
+  --panel-bg: rgba(0,0,0,0.05);
+  --dropdown-bg: rgba(255,255,255,0.95);
+}
+
+/* AMETHYST */
+[data-theme="amethyst"] {
+  --bg-gradient: linear-gradient(180deg, #1a0f2e, #2a1a4a, #3c2a6a, #140a24);
+  --text: #f3e8ff;
+  --accent: #c77dff;
+  --header-bg: rgba(30,15,50,0.75);
+  --panel-bg: rgba(255,255,255,0.05);
+  --dropdown-bg: rgba(25,10,40,0.95);
+}
+
+/* PRISM */
+[data-theme="prism"] {
+  --bg-gradient: linear-gradient(180deg, #1a1a2e, #16213e, #0f3460, #533483);
+  --text: #eaeaff;
+  --accent: #ff4d6d;
+  --header-bg: rgba(20,20,40,0.75);
+  --panel-bg: rgba(255,255,255,0.05);
+  --dropdown-bg: rgba(15,15,35,0.95);
+}
+
+/* EMBER */
+[data-theme="ember"] {
+  --bg-gradient: linear-gradient(180deg, #1a0d00, #3d1f00, #662e00, #1f0a00);
+  --text: #ffe8d6;
+  --accent: #ff6d00;
+  --header-bg: rgba(40,15,0,0.75);
+  --panel-bg: rgba(255,255,255,0.05);
+  --dropdown-bg: rgba(30,10,0,0.95);
+}
+
 /* =========================
    GLOBAL BACKGROUND FIX
 ========================= */
