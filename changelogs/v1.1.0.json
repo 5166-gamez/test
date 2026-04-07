@@ -31,13 +31,15 @@
     {
       "title": "Additions",
       "items": [
-        "Added Netlify to the alternative links dropdown"
+        "Added Netlify to the alternative links dropdown",
+        "7 new themes: Forest, Neon, Sunset, Frost, Amethyst, Prism, & Ember"
       ]
     },
     {
       "title": "Changes",
       "items": [
-        "Version titles will now display its version"
+        "Version titles will now display its version",
+        "Tweaked Shadow theme to be more darker"
       ]
     }
   ]
